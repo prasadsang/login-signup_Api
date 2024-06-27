@@ -1,0 +1,18 @@
+<div class="container" style="display: flex">
+  <mat-card
+    class="example-card"
+    appearance="outlined"
+    mat-elevation="9"
+    *ngFor="let item of items"
+  >
+    <mat-card-header>
+      <mat-card-title style="text-align: center">{{
+        item.title
+      }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="text">
+      <p>{{ item.number }}</p>
+      <p>{{ item.paragraph }}</p>
+    </mat-card-content>
+  </mat-card>
+</div>

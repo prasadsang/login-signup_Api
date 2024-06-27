@@ -1,0 +1,27 @@
+<div class="sidenav-header">
+  <img
+    src="hefh.jpg"
+    alt="profile"
+    [width]="profilePicSize()"
+    [height]="profilePicSize()"
+  />
+  <div class="header-text" [class.hide-header-text]="sideNavCollapsed()">
+    <p style="color: #fff;">HR Management</p>
+  </div>
+</div>
+<mat-nav-list>
+  <a
+  class="menu-item "
+    mat-list-item
+    *ngFor="let item of menuItiems()"
+    [routerLink]="[item.route]" 
+    routerLinkActive="selected-menu-item"
+    #rla="routerLinkActive"
+    [activated]="rla.isActive"
+  >
+    <mat-icon matListItemIcon style="color: #fff;">{{ item.icon }}</mat-icon>
+    <span matListItemTitle *ngIf="!sideNavCollapsed()" style="color: #fff;">{{
+      item.label
+    }}</span>
+  </a>
+</mat-nav-list>
